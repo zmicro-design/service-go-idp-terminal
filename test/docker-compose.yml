@@ -1,0 +1,13 @@
+services:
+  go-idp-terminal:
+    restart: always
+    image: whatwewant/go-idp-terminal:${SERVICE_GO_IDP_TERMINAL_IMAGE_VERSION}
+    environment:
+      PORT: $SERVICE_GO_IDP_TERMINAL_PORT
+      USERNAME: ${SERVICE_GO_IDP_TERMINAL_USERNAME}
+      PASSWORD: ${SERVICE_GO_IDP_TERMINAL_PASSWORD}
+      
+networks:
+  default:
+    external: true
+    name: compose-ingress
